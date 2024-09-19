@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  redis:
+    # redis insight : http://localhost:8001
+    image: redis/redis-stack
+    container_name: redis1
+    ports:
+      - "127.0.0.1:6379:6379"
+      - "127.0.0.1:8001:8001"
