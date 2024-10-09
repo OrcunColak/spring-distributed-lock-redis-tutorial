@@ -17,10 +17,12 @@ class DistributedLockTest {
     @Test
     void acquire() {
         String lockName = "my-lock";
-        boolean acquire = distributedLock.acquire(lockName, 1, TimeUnit.MINUTES);
+        String lockValue = "my-lock-value";
+
+        boolean acquire = distributedLock.acquire(lockName, lockValue, 1, TimeUnit.MINUTES);
         assertTrue(acquire);
 
-        boolean release = distributedLock.release(lockName);
+        boolean release = distributedLock.release(lockName, lockValue);
         assertTrue(release);
     }
 }

@@ -14,13 +14,10 @@ import java.lang.annotation.Target;
 @Documented
 public @interface RedisLock {
 
-    long DEFAULT_TIMEOUT_FOR_LOCK = 5L;
-    long DEFAULT_EXPIRE_TIME = 60L;
-
     String key() default "your-biz-key";
 
-    long expiredTime() default DEFAULT_EXPIRE_TIME;
+    long lockExpirationTimeInSeconds() default 60L;
 
-    long timeoutForLock() default DEFAULT_TIMEOUT_FOR_LOCK;
+    long lockWaitingTimeInMilliSeconds() default 5000L;
 
 }
