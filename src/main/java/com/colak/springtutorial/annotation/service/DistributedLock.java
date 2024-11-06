@@ -1,4 +1,4 @@
-package com.colak.springtutorial.service;
+package com.colak.springtutorial.annotation.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.RedisTemplate;

@@ -1,6 +1,6 @@
 package com.colak.springtutorial.annotation;
 
-import com.colak.springtutorial.service.DistributedLock;
+import com.colak.springtutorial.annotation.service.DistributedLock;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
