@@ -11,6 +11,7 @@ import java.util.concurrent.TimeUnit;
 public class DistributedLock {
 
     private final RedisTemplate<String, String> redisTemplate;
+
     // Redis key prefix for the lock
     private static final String DEFAULT_KEY_PREFIX = "lock:";
 
@@ -21,7 +22,7 @@ public class DistributedLock {
         return Boolean.TRUE.equals(isLocked);
     }
 
-    public boolean acquireLock(String key, String lockValue, long lockWaitingTimeInMilliSeconds, long timeout, TimeUnit unit) {
+    public boolean acquireLockWaitUntil(String key, String lockValue, long lockWaitingTimeInMilliSeconds, long timeout, TimeUnit unit) {
         String lockKey = getLockKey(key);
 
         long deadline = System.currentTimeMillis() + lockWaitingTimeInMilliSeconds;

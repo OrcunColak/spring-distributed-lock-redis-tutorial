@@ -38,7 +38,7 @@ public class RedisLockAspect {
 
         String uuid = UUID.randomUUID().toString();
 
-        boolean acquired = distributedLock.acquireLock(key, uuid, lockWaitingTimeInMilliSeconds, lockExpirationTimeInSeconds, TimeUnit.SECONDS);
+        boolean acquired = distributedLock.acquireLockWaitUntil(key, uuid, lockWaitingTimeInMilliSeconds, lockExpirationTimeInSeconds, TimeUnit.SECONDS);
 
         // If the lock is not acquired within the timeout, throw an exception, this can be customized based on business needs
         if (!acquired) {
